@@ -57,24 +57,24 @@ Log into your AWS account (https://console.aws.amazon.com/console/home) and brow
   - Login to Infinity Portal (portal.checkpoint.com) 
   - Create a Localhost Asset 
     - Go to ENVIRONMENT tab 
-    •	Click on “New” to create a new asset 
-    •	Choose a name for the new asset (i.e. Localhost)
-    •	Under “application URL” type http://localhost and click on “+”
-    •	Click the “Reverse Proxy” tab 
-    •	Enter an upstream URL (i.e. http://127.0.0.1)
-    •	Click “Save”
-        c.	Go to “ENFORCEMENT” tab 
-        d.	Under “Profiles” tab Click on “new” to create a new agent 
-            •	Choose a name for the new agent (i.e. WAAPLAB)
-            •	Agent type – choose “Infinity Next Gateway”
-            •	Click on “Reverse Proxy” tab above 
-            •	Make sure you check the previously create web asset (Localhost)
-            Leave the rest with default values and click “Save”
-        e.	Click on “Enforce”
-        f.	Click on “Tokens” to generate a token (copy and save the token string as it will be used during gateway installation)
-    8.	Install Infinity GW 
-        a.	Accept “Infinity Next Gateway” Terms and conditions in the following link https://aws.amazon.com/marketplace/pp?sku=cvxnu9a4ric9yop0tp0wdistb
-        b.	Launch CloudGuard Infinity Next Gateway CFT into an existing VPC (#23 on the CFT list) from the following URL                         https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk111013
+    -	Click on “New” to create a new asset 
+    -	Choose a name for the new asset (i.e. Localhost)
+    -	Under “application URL” type http://localhost and click on “+”
+    -	Click the “Reverse Proxy” tab 
+    -	Enter an upstream URL (i.e. http://127.0.0.1)
+    -	Click “Save”
+  - Go to “ENFORCEMENT” tab 
+  - Under “Profiles” tab Click on “new” to create a new agent 
+    -	Choose a name for the new agent (i.e. WAAPLAB)
+    - Agent type – choose “Infinity Next Gateway”
+    - Click on “Reverse Proxy” tab above 
+    -	Make sure you check the previously create web asset (Localhost)
+    Leave the rest with default values and click “Save”
+  - Click on “Enforce”
+  - Click on “Tokens” to generate a token (copy and save the token string as it will be used during gateway installation)
+- Install Infinity GW 
+  - Accept “Infinity Next Gateway” Terms and conditions in the following link https://aws.amazon.com/marketplace/pp?sku=cvxnu9a4ric9yop0tp0wdistb
+  - Launch CloudGuard Infinity Next Gateway CFT into an existing VPC (#23 on the CFT list) from the following URL                         https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk111013
         c.	Choose “WAAP LAB” VPC 
         d.	Choose the public and private subnets accordingly 
         e.	Choose the key pair we previously created  
