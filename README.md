@@ -75,10 +75,10 @@ Log into your AWS account (https://console.aws.amazon.com/console/home) and brow
 - Install Infinity GW 
   - Accept “Infinity Next Gateway” Terms and conditions in the following link https://aws.amazon.com/marketplace/pp?sku=cvxnu9a4ric9yop0tp0wdistb
   - Launch CloudGuard Infinity Next Gateway CFT into an existing VPC (#23 on the CFT list) from the following URL                         https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk111013
-        c.	Choose “WAAP LAB” VPC 
-        d.	Choose the public and private subnets accordingly 
-        e.	Choose the key pair we previously created  
-        f.	Enter Password Hash (i.e. “$1$IFkdjsxm$4rreJ1DM4TFCqJ/F4I2xs/” for Cpwins1!)
-        g.	Infinity Next Agent Token (paste the token generated on step 7.f. above)
-        Launch the installation and wait until CloudFormation finishes 
+  - Choose “WAAP LAB” VPC 
+  - Choose the public and private subnets accordingly 
+  - Choose the key pair we previously created  
+  - Enter Password Hash (i.e. “$1$IFkdjsxm$4rreJ1DM4TFCqJ/F4I2xs/” for Cpwins1!)
+  - Infinity Next Agent Token (paste the token generated on step 7.f. above)
+  Launch the installation and wait until CloudFormation finishes 
 
