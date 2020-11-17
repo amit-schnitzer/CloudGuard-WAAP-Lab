@@ -9,5 +9,5 @@ Before you begin make sure you have:
   2. Account with Check Point Infinity Portal (portal.checkpoint.com)
 
 # Lab Topology 
-
+![Topology](lab-topology.JPG)
 # Preparing your Lab environment 
