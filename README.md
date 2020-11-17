@@ -56,7 +56,7 @@ Log into your AWS account (https://console.aws.amazon.com/console/home) and brow
 - Generate WAAP agent token 
   - Login to Infinity Portal (portal.checkpoint.com) 
   - Create a Localhost Asset 
-    •	Go to ENVIRONMENT tab 
+    - Go to ENVIRONMENT tab 
     •	Click on “New” to create a new asset 
     •	Choose a name for the new asset (i.e. Localhost)
     •	Under “application URL” type http://localhost and click on “+”
