@@ -1,9 +1,3 @@
-- Item 1
-- Item 2
-  - Sub Item 1
-  - Sub Item 2
-
-
 # CloudGuard-WAAP-Lab
 Check Point CloudGuard WAAP (Web Application and API protection) Hands-on Lab 
 
@@ -23,6 +17,11 @@ Both of our deployed instances will reside on the public subnet as this will all
 
 # Preparing your Lab environment 
 Log into your AWS account (https://console.aws.amazon.com/console/home) and browse to the VPC service page  
+- Item 1
+- Item 2
+  - Sub Item 1
+  - Sub Item 2
+  
     1. Use “Launch VPC Wizard” and create a “VPC with a Single Public Subnet”  
        * IPv4 CIDR block - 10.0.0.0/16  
        * VPC Name “WAAP LAB” (or whatever you feel like calling it)  
