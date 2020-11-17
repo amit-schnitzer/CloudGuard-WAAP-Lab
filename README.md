@@ -16,15 +16,15 @@ Both of our deployed instances will reside on the public subnet as this will all
 ![Topology](lab-topology.jpg)
 
 # Preparing your Lab environment 
-Log into your AWS account (https://console.aws.amazon.com/console/home) and browse to the VPC service page 
-    1.	Use “Launch VPC Wizard” and create a “VPC with a Single Public Subnet” 
-        a.	IPv4 CIDR block - 10.0.0.0/16 
-        b.	VPC Name “WAAP LAB” (or whatever you feel like calling it) 
-        c.	Public subnet’s IPv4 CIDR -  10.0.0.0/24 
-        Leave the rest with default values 
-    2.	Add a private subnet 
-        a.	Name Tag – Private Subnet 
-        b.	VPC – choose “WAAP LAB” VPC we’ve just created 
+Log into your AWS account (https://console.aws.amazon.com/console/home) and browse to the VPC service page  
+    1.	Use “Launch VPC Wizard” and create a “VPC with a Single Public Subnet”  
+        a.	IPv4 CIDR block - 10.0.0.0/16  
+        b.	VPC Name “WAAP LAB” (or whatever you feel like calling it)  
+        c.	Public subnet’s IPv4 CIDR -  10.0.0.0/24  
+        Leave the rest with default values  
+    2.	Add a private subnet  
+        a.	Name Tag – Private Subnet  
+        b.	VPC – choose “WAAP LAB” VPC we’ve just created  
         c.	IPv4 CIDR Block - 10.0.1.0/24 
         Leave the rest with default values 
     3.	Create an EC2 key pair
