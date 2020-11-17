@@ -53,17 +53,16 @@ Log into your AWS account (https://console.aws.amazon.com/console/home) and brow
   -	Browse to http://<instance public IP>:7070/install.php to test our installation 
     - Click on “install”
     - Login 
-  
-    7.	Generate WAAP agent token 
-        a.	Login to Infinity Portal (portal.checkpoint.com) 
-        b.	Create a Localhost Asset 
-            •	Go to ENVIRONMENT tab 
-            •	Click on “New” to create a new asset 
-            •	Choose a name for the new asset (i.e. Localhost)
-            •	Under “application URL” type http://localhost and click on “+”
-            •	Click the “Reverse Proxy” tab 
-            •	Enter an upstream URL (i.e. http://127.0.0.1)
-            •	Click “Save”
+- Generate WAAP agent token 
+  - Login to Infinity Portal (portal.checkpoint.com) 
+  - Create a Localhost Asset 
+    •	Go to ENVIRONMENT tab 
+    •	Click on “New” to create a new asset 
+    •	Choose a name for the new asset (i.e. Localhost)
+    •	Under “application URL” type http://localhost and click on “+”
+    •	Click the “Reverse Proxy” tab 
+    •	Enter an upstream URL (i.e. http://127.0.0.1)
+    •	Click “Save”
         c.	Go to “ENFORCEMENT” tab 
         d.	Under “Profiles” tab Click on “new” to create a new agent 
             •	Choose a name for the new agent (i.e. WAAPLAB)
