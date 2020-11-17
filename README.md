@@ -82,3 +82,59 @@ Log into your AWS account (https://console.aws.amazon.com/console/home) and brow
   - Infinity Next Agent Token (paste the token generated on step 7.f. above)
   Launch the installation and wait until CloudFormation finishes 
 
+## Configuring WAAP protection
+- Login to Infinity Portal (portal.checkpoint.com)
+- Under “My Services”, click “Infinity Next”
+- First lets, create an asset representing our web server 
+  - Go to ENVIRONMENT tab and under “Assets” choose to create a new
+  - Enter a name for the asset (i.e bwapp)
+  - Under “Application URL” type is the following http://<gw public IP>
+    Make sure to replace with the gateway’s public IP from the AWS console
+  - Click on “Reverse Proxy” tab on the left 
+  - Under “Upstream URL” enter the following http://10.0.0.10:7070
+  If you’ve assigned a different IP to the web server, make sure to replace it accordingly
+  - Click on “Enforce"
+- Now let’s create a policy that will be pushed and enforced on our gateway 
+  - Go to POLICY tab on the left 
+  - Under Rules create on “New” to create a new rule
+  - Under “Assets & Zones” click on “+” choose “Assets” and make sure you check the Asset we’ve created on step 2 above 
+  - Under “Practices” click on “+” and choose “Web application protection”
+  - Under “Triggers”, choose “Log”
+  - Once done, click on “ENFORCE” to push policy on our gateway 
+
+## Testing our configuration
+Let’s test our configuration
+
+### Use-case-1: SQL Injection Attack
+
+- Launch SQL injection attack – NO CG-WAAP interference 
+  Start by logging into our vulnerable website directly http://<web server public IP address>:7070/ using the following credentials bee/bug
+  - On the top right corner choose “SQL Injection (GET/SEARCH)” and click on “Hack”
+  - Now, in the search field, type “iron” for example and click on search 
+  - Now, leave the search field empty and click on “search” 
+  - Next, run the following “iron' or 1=1 -- “ and click “Search”
+- Launch SQL Injection attack – CG-WAAP enabled
+  - Login to Infinity Portal (portal.checkpoint.com)
+  - Under “ENFORCEMENTS” section click “Profiles” on the left
+  - Click “WAAPLAB” agent to see its configuration on the right
+  - Under “REVERSE PROXY” remove “Localhost” tick and enable “bwapp” tick.
+  -	On top middle click “ENFORCE” to push latest policy to our agent. 
+  - Now, we’ll login the vulnerable website through our Infinity Next gateway http://<gateway public IP address>/login.php (same credentials as above) and repeat step 1a through     1d. As you can see, the actual attack is being blocked by our WAAP gateway
+
+### Use-case-2: Directory Traversal Attack
+
+- Launch Directory traversal attack (do this in both browser tabs and examine the differences) – NO CG-WAAP interference 
+  - On the top right corner choose “Directory Traversal – Directories” and click on “hack” button 
+  - Replace the word “documents” from the URL field with “/etc” and see what happens. 
+- Test same steps with Infinity Gateway URL
+
+### Use-case-3: PHP Code Injection Attack
+
+- Launch PHP Code Injection (do this in both browser tabs and examine the differences)
+  - On the top right corner choose “PHP Code Injection”  
+  - Click on “message” and change the URL by replacing the word “test” with “phpinfo()”
+  - Change phpinfo() with system(‘ls’) 
+  - Change system(‘ls’) with exec('whoami');
+- Test same steps with Infinity Gateway URL
+- Inspect the logs on infinity portal 
+
