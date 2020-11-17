@@ -22,46 +22,38 @@ Log into your AWS account (https://console.aws.amazon.com/console/home) and brow
   - VPC Name “WAAP LAB” (or whatever you feel like calling it)
   - Public subnet’s IPv4 CIDR -  10.0.0.0/24
   Leave the rest with default values
-- Item 2
-  - Sub Item 1
-  - Sub Item 2
+- Add a private subnet
+  - Name Tag – Private Subnet
+  - VPC – choose “WAAP LAB” VPC we’ve just created
+  - IPv4 CIDR Block - 10.0.1.0/24
+  Leave the rest with default values 
+- Create an EC2 key pair
+  - Key pair name – WAAP LAB
+  - File Format ppk
+  - Tags – you can leave empty
+- Launch Amazon Linux 2 AMI (HVM), SSD Volume Type
+  - EC2 Size – t2.micro is sufficient
+  - Network – WAAP LAB VPC
+  - Subnet – Public subnet
+  - Auto Assign Public IP – enable
+  - Network Interfaces --> Primary IP – 10.0.0.10
+  - Security Group
+    * Add port 7070 from 0.0.0.0/0
+  - Click “launch” to finish the setup phase and launch our instance
+  Leave the rest with default values and launch the instance
+- Installing Docker on our Linux EC2 server 
+  -	Run “sudo yum update –y”
+  - Run “sudo yum install -y docker”
+  - Run “sudo service docker start”
+  - Run “sudo usermod -a -G docker ec2-user”
+  - Logout and log back in
+- Launch our vulnerable web site 
+  - Run “docker run -d -p 7070:80 raesene/bwapp”
+  - Run “docker ps” and make sure our container is running 
+  -	Browse to http://<instance public IP>:7070/install.php to test our installation 
+    - Click on “install”
+    - Login 
   
-    1. Use “Launch VPC Wizard” and create a “VPC with a Single Public Subnet”  
-       * IPv4 CIDR block - 10.0.0.0/16  
-       * VPC Name “WAAP LAB” (or whatever you feel like calling it)  
-       * Public subnet’s IPv4 CIDR -  10.0.0.0/24  
-       Leave the rest with default values  
-    2.	Add a private subnet  
-        a.	Name Tag – Private Subnet  
-        b.	VPC – choose “WAAP LAB” VPC we’ve just created  
-        c.	IPv4 CIDR Block - 10.0.1.0/24 
-        Leave the rest with default values 
-    3.	Create an EC2 key pair
-        a.	Key pair name – WAAP LAB
-        b.	File Format ppk 
-        c.	Tags – you can leave empty 
-    4.	Launch Amazon Linux 2 AMI (HVM), SSD Volume Type
-        a.	EC2 Size – t2.micro is sufficient 
-        b.	Network – WAAP LAB VPC 
-        c.	Subnet – Public subnet 
-        d.	Auto Assign Public IP – enable 
-        e.	Network Interfaces --> Primary IP – 10.0.0.10
-        f.	Security Group 
-            •	Add port 7070 from 0.0.0.0/0 
-        g.	Click “launch” to finish the setup phase and launch our instance 
-        Leave the rest with default values and launch the instance 
-    5.	Installing Docker on our Linux EC2 server 
-        a.	Run “sudo yum update –y”
-        b.	Run “sudo yum install -y docker”
-        c.	Run “sudo service docker start”
-        d.	Run “sudo usermod -a -G docker ec2-user”
-        e.	Logout and log back in
-    6.	Launch our vulnerable web site 
-        a.	Run “docker run -d -p 7070:80 raesene/bwapp”
-        b.	Run “docker ps” and make sure our container is running 
-        c.	Browse to http://<instance public IP>:7070/install.php to test installation 
-        d.	Click on “install”
-        e.	Login 
     7.	Generate WAAP agent token 
         a.	Login to Infinity Portal (portal.checkpoint.com) 
         b.	Create a Localhost Asset 
