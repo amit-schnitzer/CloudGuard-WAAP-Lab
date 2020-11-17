@@ -7,4 +7,7 @@ This is a practical, Hands-On experience with Check Point's CloudGuard WAAP prod
 Before you begin make sure you have:
   1. an AWS account that you are able to launch network and compute resources into 
   2. Account with Check Point Infinity Portal (portal.checkpoint.com)
-  
+
+# Lab Topology 
+
+# Preparing your Lab environment 
