@@ -3,19 +3,19 @@ Check Point CloudGuard WAAP (Web Application and API protection) Hands-on Lab
 
 This is a practical, Hands-On experience with Check Point's CloudGuard WAAP product
 
-# Pre-requisites 
+## Pre-requisites 
 Before you begin make sure you have:
   1. an AWS account that you are able to launch network and compute resources into 
   2. Account with Check Point Infinity Portal (portal.checkpoint.com)
 
-# Lab Topology 
+## Lab Topology 
 Our lab environment topology is pretty straight forward, it consists of a single VPC with 2 subnets in it (private and public)
 Into that VPC, we'll deploy 2 instances. First one is a vulnerable website and the second one is our WAAP gw.
 Both of our deployed instances will reside on the public subnet as this will allow us to test both scenarios (with and without protection)
 
 ![Topology](lab-topology.jpg)
 
-# Preparing your Lab environment 
+## Preparing your Lab environment 
 Log into your AWS account (https://console.aws.amazon.com/console/home) and browse to the VPC service page  
 - Use “Launch VPC Wizard” and create a “VPC with a Single Public Subnet”
   - IPv4 CIDR block - 10.0.0.0/16 
